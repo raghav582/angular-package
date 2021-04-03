@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "rgv-jpath-picker": [
+        "dist/rgv-jpath-picker"
+      ],
+      "rgv-jpath-picker/*": [
+        "dist/rgv-jpath-picker/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

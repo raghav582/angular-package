@@ -1,0 +1,12 @@
+{
+  "name": "rgv-jpath-picker",
+  "version": "0.3.6",
+  "description": "jpath picker",
+  "author": "raghav582",
+  "license": "ISC",
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}

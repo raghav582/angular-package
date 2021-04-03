@@ -1,0 +1,20 @@
+<section class="rgv-jpath-picker">
+    <section *ngFor="let segment of segments" [ngClass]="['segment', 'segment-type-' + segment.type]">
+        <section (click)="toggle(segment)" [ngClass]="{
+          'segment-main': true,
+          'expandable': isExpandable(segment),
+          'expanded': segment.expanded
+        }">
+            <div *ngIf="isExpandable(segment)" class="toggler"></div>
+            <span class="segment-key" (click)="getJpath(segment)" style="cursor: pointer;">{{ segment.key }}</span>
+            <span class="segment-separator">: </span>
+            <span *ngIf="!segment.expanded || !isExpandable(segment)" class="segment-value">{{ segment.description
+                }}</span>
+        </section>
+        <section *ngIf="segment.expanded && isExpandable(segment)" class="children">
+            <rgv-jpath-picker (jPath)="setJpath($event)" [isParentList]="segment.isListValue"
+                [jsonPath]="segment.jsonPath" [json]="segment.value" [expanded]="expanded" [depth]="depth"
+                [_currentDepth]="_currentDepth"></rgv-jpath-picker>
+        </section>
+    </section>
+</section>
